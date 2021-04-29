@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bpr:release xmlns:bpr="http://www.blueprism.co.uk/product/release">
+    <bpr:name>Extended Image Manipulation_4_29_2021</bpr:name>
+    <bpr:release-notes />
+    <bpr:created>2021-04-29 14:50:22Z</bpr:created>
+    <bpr:package-id>28</bpr:package-id>
+    <bpr:package-name>Extended Image Manipulation</bpr:package-name>
+    <bpr:user-created-by>admin</bpr:user-created-by>
+    <bpr:contents count="2">
+        <object id="800785ea-6dda-4d42-ac7b-6b3bf94257c8" name="Nephthis - Extended Image Manipulation" xmlns="http://www.blueprism.co.uk/product/process"><process name="Nephthis - Extended Image Manipulation" version="1.0" bpversion="7.0.0.35305" narrative="" byrefcollection="true" type="object" runmode="Exclusive"><appdef><element name="Application Root"><id>47a53aad-73e2-4c73-916f-93fe2bad7fe8</id><type>Application</type><basetype>Application</basetype><datatype>unknown</datatype><diagnose>False</diagnose></element></appdef><view><camerax>0</camerax><cameray>0</cameray><zoom version="2">1.25</zoom></view><preconditions /><endpoint narrative="" /><subsheet subsheetid="f322ba42-e787-465f-9467-6dfed05d83c0" type="CleanUp" published="True"><name>Clean Up</name><view><camerax>0</camerax><cameray>0</cameray><zoom version="2">1.25</zoom></view></subsheet><subsheet subsheetid="397fc186-f7fb-4912-ac8b-ea826268aeae" type="Normal" published="True"><name>Crop</name><view><camerax>81</camerax><cameray>0</cameray><zoom version="2">1.25</zoom></view></subsheet><subsheet subsheetid="0ee4c49c-71df-4c74-bf99-9cd38c8422a4" type="Normal" published="True"><name>Get SubImage Position (Fast)</name><view><camerax>0</camerax><cameray>0</cameray><zoom version="2">1.25</zoom></view></subsheet><subsheet subsheetid="916cb5c0-e02a-4c9c-a6d6-04b3d46bceb3" type="Normal" published="True"><name>Screenshot Desktop</name><view><camerax>0</camerax><cameray>0</cameray><zoom version="2">1.25</zoom></view></subsheet><subsheet subsheetid="4d776452-6a9a-48fc-a7d5-89adecc37a8f" type="Normal" published="True"><name>Save Image</name><view><camerax>0</camerax><cameray>0</cameray><zoom version="2">1.25</zoom></view></subsheet><stage stageid="1b580dbf-3d68-4906-8e1f-84400534ac15" name="Start" type="Start"><loginhibit /><display x="15" y="-105" /><onsuccess>49de86aa-3b4a-4490-8c53-05b235cd8e65</onsuccess></stage><stage stageid="49de86aa-3b4a-4490-8c53-05b235cd8e65" name="End" type="End"><loginhibit /><display x="15" y="90" /></stage><stage stageid="9ec04a13-2308-4c7a-b685-54abf20929d5" name="Stage1" type="ProcessInfo"><display x="-195" y="-105" w="150" h="90" /><references><reference>System.dll</reference><reference>System.Data.dll</reference><reference>System.Xml.dll</reference><reference>System.Drawing.dll</reference><reference>System.Windows.Forms.dll</reference></references><imports><import>System</import><import>System.Drawing</import><import>System.Data</import><import>System.Windows.Forms</import><import>System.Drawing.Imaging</import></imports><language>visualbasic</language><globalcode><![CDATA[]]></globalcode><code><![CDATA[]]></code></stage><stage stageid="85de2c18-bae2-46f7-a048-434d0c45b100" name="Clean Up" type="SubSheetInfo"><subsheetid>f322ba42-e787-465f-9467-6dfed05d83c0</subsheetid><display x="-195" y="-105" w="150" h="90" /></stage><stage stageid="b7efe07f-7e19-460e-8045-1bf4b7fb2c2f" name="Start" type="Start"><subsheetid>f322ba42-e787-465f-9467-6dfed05d83c0</subsheetid><loginhibit /><display x="15" y="-105" /><onsuccess>92a19039-6521-468c-8961-d3e55bf38132</onsuccess></stage><stage stageid="92a19039-6521-468c-8961-d3e55bf38132" name="End" type="End"><subsheetid>f322ba42-e787-465f-9467-6dfed05d83c0</subsheetid><loginhibit /><display x="15" y="90" /></stage><stage stageid="7d5e9c29-e098-48eb-b2c4-dc349f4f8752" name="Crop" type="SubSheetInfo"><subsheetid>397fc186-f7fb-4912-ac8b-ea826268aeae</subsheetid><narrative>Returns the specified part of an image. If width and height are not specified (ie, zero) then it'll return the rest of the image past the crop coordinates.</narrative><display x="-195" y="-105" w="150" h="90" /></stage><stage stageid="f5f1364a-af74-4604-bacd-ca6dc65547c3" name="Start" type="Start"><subsheetid>397fc186-f7fb-4912-ac8b-ea826268aeae</subsheetid><loginhibit /><display x="15" y="-105" /><inputs><input type="image" name="Image" narrative="Image to resize." stage="Image" /><input type="number" name="Crop X" narrative="The left side of the area to crop." stage="Crop X" /><input type="number" name="Crop Y" narrative="The top side of the area to crop." stage="Crop Y" /><input type="number" name="Crop Width" narrative="Width of the crop." stage="Crop Width" /><input type="number" name="Crop Height" narrative="Height of the crop." stage="Crop Height" /></inputs><onsuccess>5ddf0207-cf35-4801-b4b5-ca47ad686570</onsuccess></stage><stage stageid="772859bb-9f0b-4b88-a895-c24d7b68a05e" name="End" type="End"><subsheetid>397fc186-f7fb-4912-ac8b-ea826268aeae</subsheetid><loginhibit /><display x="15" y="-15" /><outputs><output type="image" name="Cropped" narrative="The cropped image." stage="Cropped" /></outputs></stage><stage stageid="e5db37f4-8db2-4abe-968f-d34681e3cc55" name="Note1" type="Note"><subsheetid>f322ba42-e787-465f-9467-6dfed05d83c0</subsheetid><narrative>Clean Up Page
+
+This is an optional page where you might choose to perform some finalisation (or "cleanup") tasks as your business object is closed down.
+
+The cleanup action will be called automatically immediately after closing your business object at the end of a business process.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than before the disposal of the business object.</narrative><display x="-180" y="60" w="180" h="230" /></stage><stage stageid="714f93f3-7905-4998-b384-9bc2f6d1cf56" name="Note2" type="Note"><narrative>Initialise Page
+
+This is an optional page where you might choose to perform some initialisation tasks after your business object is loaded.
+
+The initialise action will be called automatically immediately after loading your business object.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than after the creation of the object.</narrative><display x="-180" y="60" w="180" h="230" /></stage><stage stageid="3a84200e-0201-4ab5-b430-d43eeecca3f0" name="Image" type="Data"><subsheetid>397fc186-f7fb-4912-ac8b-ea826268aeae</subsheetid><display x="90" y="-105" /><datatype>image</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="3f2e937e-79ef-4e9b-9def-4b71396f9afc" name="Crop X" type="Data"><subsheetid>397fc186-f7fb-4912-ac8b-ea826268aeae</subsheetid><display x="135" y="-105" /><datatype>number</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="ca701ef1-6e24-4cc5-91d7-8f8c12ea28ab" name="Crop Y" type="Data"><subsheetid>397fc186-f7fb-4912-ac8b-ea826268aeae</subsheetid><display x="180" y="-105" /><datatype>number</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="32df23e5-aad3-4325-af6e-d7643e92347e" name="Crop Width" type="Data"><subsheetid>397fc186-f7fb-4912-ac8b-ea826268aeae</subsheetid><display x="225" y="-105" /><datatype>number</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="84b0516f-7cb1-4bdc-ab2d-404f37344eec" name="Crop Height" type="Data"><subsheetid>397fc186-f7fb-4912-ac8b-ea826268aeae</subsheetid><display x="270" y="-105" /><datatype>number</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="6dbb8cb7-6d54-4c57-a5b2-be0e262c2d28" name="Cropped" type="Data"><subsheetid>397fc186-f7fb-4912-ac8b-ea826268aeae</subsheetid><display x="90" y="-15" /><datatype>image</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="5ddf0207-cf35-4801-b4b5-ca47ad686570" name="Crop_Image" type="Code"><subsheetid>397fc186-f7fb-4912-ac8b-ea826268aeae</subsheetid><loginhibit /><display x="15" y="-60" /><inputs><input type="image" name="Image" expr="[Image]" /><input type="number" name="Crop_X" expr="[Crop X]" /><input type="number" name="Crop_Y" expr="[Crop Y]" /><input type="number" name="Crop_Width" expr="[Crop Width]" /><input type="number" name="Crop_Height" expr="[Crop Height]" /></inputs><outputs><output type="image" name="Cropped" stage="Cropped" /></outputs><onsuccess>772859bb-9f0b-4b88-a895-c24d7b68a05e</onsuccess><code><![CDATA[Dim X As Integer = CInt(Crop_X)
+Dim Y As Integer = CInt(Crop_Y)
+Dim Width As Integer = CInt(Crop_Width)
+Dim Height As Integer = CInt(Crop_Height)
+
+If X < 0 OrElse Y < 0 OrElse Width < 0 OrElse Height < 0 OrElse 
+   X + Width > Image.Width OrElse Y + Height > Image.Height Then
+	Throw New Exception("Crop bounds are outside of image bounds")
+End If
+
+If Width = 0 Then
+	Width = Image.Width - X
+End If
+
+If Height = 0 Then
+	Height = Image.Height - Y
+End If
+
+Dim Rect As New Rectangle(X, Y, Width, Height)
+Cropped = Image.Clone(Rect, Image.PixelFormat)]]></code></stage><stage stageid="cfbd3a3f-c7e4-49cc-9e92-89ca7dcd86c6" name="Get SubImage Position (Fast)" type="SubSheetInfo"><subsheetid>0ee4c49c-71df-4c74-bf99-9cd38c8422a4</subsheetid><narrative>Finds whether the main image contains a sub image, and if found gives the X,Y coordinates of the sub image. Can be faster than the default version of this function, since the image bits are locked before comparing.</narrative><display x="-195" y="-105" w="150" h="90" /></stage><stage stageid="a0bc46da-43be-4862-bb26-a68104cf2ce1" name="Start" type="Start"><subsheetid>0ee4c49c-71df-4c74-bf99-9cd38c8422a4</subsheetid><loginhibit /><display x="15" y="-105" /><inputs><input type="image" name="Main Image" narrative="The image to check" stage="Main Image" /><input type="image" name="Potential SubImage" narrative="The image to check for" stage="Potential SubImage" /></inputs><onsuccess>00090ffe-62c7-4986-85a9-9c0093635c73</onsuccess></stage><stage stageid="14be346a-34ea-41e6-8ee5-f4d398f669e9" name="End" type="End"><subsheetid>0ee4c49c-71df-4c74-bf99-9cd38c8422a4</subsheetid><loginhibit /><display x="15" y="-15" /><outputs><output type="number" name="X Index" narrative="The X location of the sub image" stage="X Index" /><output type="number" name="Y Index" narrative="The Y location of the sub image" stage="Y Index" /><output type="flag" name="Contained" narrative="True if the main image contains the sub image" stage="Contained" /></outputs></stage><stage stageid="cc1fe383-72c9-47ca-9082-1fcebd21c5bd" name="Main Image" type="Data"><subsheetid>0ee4c49c-71df-4c74-bf99-9cd38c8422a4</subsheetid><display x="90" y="-105" /><datatype>image</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="39d9cd23-c1e1-47fe-9ff9-d8236ca462c7" name="Potential SubImage" type="Data"><subsheetid>0ee4c49c-71df-4c74-bf99-9cd38c8422a4</subsheetid><display x="135" y="-105" /><datatype>image</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="56b03b4b-af43-4c1c-9b3f-e501f169ea26" name="X Index" type="Data"><subsheetid>0ee4c49c-71df-4c74-bf99-9cd38c8422a4</subsheetid><display x="90" y="-15" /><datatype>number</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="c6a52ea7-9c45-412b-aace-ce4689a5847f" name="Y Index" type="Data"><subsheetid>0ee4c49c-71df-4c74-bf99-9cd38c8422a4</subsheetid><display x="135" y="-15" /><datatype>number</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="9332f339-dcbc-4d01-8e1d-8bda4e201376" name="Contained" type="Data"><subsheetid>0ee4c49c-71df-4c74-bf99-9cd38c8422a4</subsheetid><display x="180" y="-15" /><datatype>flag</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="00090ffe-62c7-4986-85a9-9c0093635c73" name="Get_SubImage_Pos" type="Code"><subsheetid>0ee4c49c-71df-4c74-bf99-9cd38c8422a4</subsheetid><loginhibit /><display x="15" y="-60" /><inputs><input type="image" name="bmp1" expr="[Main Image]" /><input type="image" name="bmp2" expr="[Potential SubImage]" /></inputs><outputs><output type="number" name="MatchX" stage="X Index" /><output type="number" name="MatchY" stage="Y Index" /><output type="flag" name="FoundMatch" stage="Contained" /></outputs><onsuccess>14be346a-34ea-41e6-8ee5-f4d398f669e9</onsuccess><code><![CDATA[Dim Rect1 As New Rectangle(0, 0, bmp1.Width, bmp1.Height)
+Dim Rect2 As New Rectangle(0, 0, bmp2.Width, bmp2.Height)
+Dim bmpData1 As BitmapData = bmp1.LockBits(Rect1, ImageLockMode.ReadOnly, PixelFormat.Format24bppRgb)
+Dim bmpData2 As BitmapData = bmp2.LockBits(Rect2, ImageLockMode.ReadOnly, PixelFormat.Format24bppRgb)
+
+Dim ptr1 As IntPtr = bmpData1.Scan0
+Dim ptr2 AS IntPtr = bmpData2.Scan0
+
+Dim bytes1 As Integer = Math.Abs(bmpData1.Stride) * bmp1.Height
+Dim bytes2 AS Integer = Math.Abs(bmpData2.Stride) * bmp2.Height
+Dim rgbValues1(bytes1 - 1) As Byte
+Dim rgbValues2(bytes2 - 1) As Byte
+
+Dim r1 As Byte() = New Byte(bytes1 / 3 - 1) {}
+Dim g1 As Byte() = New Byte(bytes1 / 3 - 1) {}
+Dim b1 As Byte() = New Byte(bytes1 / 3 - 1) {}
+Dim r2 As Byte() = New Byte(bytes2 / 3 - 1) {}
+Dim g2 As Byte() = New Byte(bytes2 / 3 - 1) {}
+Dim b2 As Byte() = New Byte(bytes2 / 3 - 1) {}
+
+System.Runtime.InteropServices.Marshal.Copy(ptr1, rgbValues1, 0, bytes1)
+System.Runtime.InteropServices.Marshal.Copy(ptr2, rgbValues2, 0, bytes2)
+
+bmp1.UnlockBits(bmpData1)
+bmp2.UnlockBits(bmpData2)
+
+Dim count As Integer = 0
+Dim stride = bmpData1.Stride
+For Column As Integer = 0 To bmpData1.Height - 1 
+	For Row As Integer = 0 To bmpData1.Width - 1
+		b1(count) = CType(rgbValues1((column * stride) + (row * 3)), Byte)
+		g1(count) = CType(rgbValues1((column * stride) + (row * 3) + 1), Byte)
+		r1(count) = CType(rgbValues1((column * stride) + (row * 3) + 2), Byte)
+		count = count + 1
+	Next
+Next
+
+count = 0
+stride = bmpData2.Stride
+For Column As Integer = 0 To bmpData2.Height - 1 
+	For Row As Integer = 0 To bmpData2.Width - 1
+		b2(count) = CType(rgbValues2((column * stride) + (row * 3)), Byte)
+		g2(count) = CType(rgbValues2((column * stride) + (row * 3) + 1), Byte)
+		r2(count) = CType(rgbValues2((column * stride) + (row * 3) + 2), Byte)
+		count = count + 1
+	Next
+Next
+			
+FoundMatch = False
+MatchX = -1
+MatchY = -1
+
+For y1 As Integer = 0 To bmpData1.Height - bmpData2.Height - 1
+	For x1 As Integer = 0 To bmpData1.Width - bmpData2.Width - 1
+		Dim Index1 As Integer = x1 + (y1 * bmpData1.Width)
+		If r1(Index1) = r2(0) AndAlso g1(Index1) = g2(0) AndAlso b1(Index1) = b2(0) Then
+			FoundMatch = True
+			Dim SubIndex1 As Integer = Index1
+			For y2 As Integer = 0 To bmpData2.Height - 1
+				For x2 As Integer = 0 To bmpData2.Width - 1
+					Dim Index2 As Integer = x2 + (y2 * bmpData2.Width)
+					If r1(SubIndex1) <> r2(Index2) OrElse g1(SubIndex1) <> g2(Index2) OrElse b1(SubIndex1) <> b2(Index2) Then
+						FoundMatch = False
+						GoTo ExitInnerFor
+					End If
+					
+					If Index2 Mod bmpData2.Width = bmpData2.Width - 1 Then
+						SubIndex1 = SubIndex1 + bmpData1.Width - bmpData2.Width
+					End If
+					SubIndex1 = SubIndex1 + 1
+				Next
+			Next
+		End If
+		
+		ExitInnerFor:
+		If FoundMatch Then
+			MatchX = x1
+			MatchY = y1
+			GoTo ExitOuterFor
+		End If
+	Next
+Next
+
+ExitOuterFor:]]></code></stage><stage stageid="7acf32c3-4d11-4cd3-9091-42e6f330b7cc" name="Save Image" type="SubSheetInfo"><subsheetid>4d776452-6a9a-48fc-a7d5-89adecc37a8f</subsheetid><narrative>Saves an image to the specified file.</narrative><display x="-195" y="-105" w="150" h="90" /></stage><stage stageid="597ab894-13ed-4997-980f-1386d8874c55" name="Start" type="Start"><subsheetid>4d776452-6a9a-48fc-a7d5-89adecc37a8f</subsheetid><loginhibit /><display x="15" y="-105" /><inputs><input type="image" name="Image" narrative="Image to save." stage="Image" /><input type="text" name="Path" narrative="Path in which to save the Image." stage="Path" /><input type="text" name="Image Format" narrative="Format in which to save the image. Acceptable values are BMP, GIF, JPG, JPEG, PNG, TIF and TIFF." stage="Image Format" /></inputs><onsuccess>488fb96e-8840-47c2-a2df-39f47a63bc61</onsuccess></stage><stage stageid="bf0b11ba-6e2d-4de2-8a9b-799b4719e701" name="End" type="End"><subsheetid>4d776452-6a9a-48fc-a7d5-89adecc37a8f</subsheetid><loginhibit /><display x="15" y="-15" /><outputs><output type="flag" name="Success" narrative="Weather or not the image was saved successfully." stage="Success" /><output type="text" name="Message" narrative="Error message if not successful." stage="Message" /></outputs></stage><stage stageid="6ec59000-48bc-4f91-87b2-b4bb467aead8" name="Image" type="Data"><subsheetid>4d776452-6a9a-48fc-a7d5-89adecc37a8f</subsheetid><display x="90" y="-105" /><datatype>image</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="ee0e8553-c4b8-48c2-ac55-e2a0d7134ac6" name="Path" type="Data"><subsheetid>4d776452-6a9a-48fc-a7d5-89adecc37a8f</subsheetid><display x="135" y="-105" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="a74787c0-6014-49b8-b776-af27f4a8b9bd" name="Image Format" type="Data"><subsheetid>4d776452-6a9a-48fc-a7d5-89adecc37a8f</subsheetid><display x="180" y="-105" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="9803eff3-dd9f-4447-9316-a623d60b4d0f" name="Success" type="Data"><subsheetid>4d776452-6a9a-48fc-a7d5-89adecc37a8f</subsheetid><display x="90" y="-15" /><datatype>flag</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="757e9357-1aa0-4169-8f54-5b67cea535cf" name="Message" type="Data"><subsheetid>4d776452-6a9a-48fc-a7d5-89adecc37a8f</subsheetid><display x="135" y="-15" /><datatype>text</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="488fb96e-8840-47c2-a2df-39f47a63bc61" name="Save_Image" type="Code"><subsheetid>4d776452-6a9a-48fc-a7d5-89adecc37a8f</subsheetid><loginhibit /><display x="15" y="-60" /><inputs><input type="image" name="Image" expr="[Image]" /><input type="text" name="Path" expr="[Path]" /><input type="text" name="Image Format" expr="[Image Format]" /></inputs><outputs><output type="flag" name="Success" stage="Success" /><output type="text" name="Message" stage="Message" /></outputs><onsuccess>bf0b11ba-6e2d-4de2-8a9b-799b4719e701</onsuccess><code><![CDATA[Success = True
+
+Try
+	Dim Format As ImageFormat
+	Select Case Image_Format.ToUpper
+		Case "BMP": 	Format = ImageFormat.Bmp
+		Case "GIF": 	Format = ImageFormat.Gif
+		Case "JPG": 	Format = ImageFormat.Jpeg
+		Case "JPEG": 	Format = ImageFormat.Jpeg
+		Case "PNG": 	Format = ImageFormat.Png
+		Case "TIF": 	Format = ImageFormat.Tiff
+		Case "TIFF":	Format = ImageFormat.Tiff
+		Case Else:		Throw New Exception("Image format not recognized")
+	End Select
+	Image.Save(Path, Format)
+Catch e As Exception
+	Success = False
+	Message = e.Message
+End Try]]></code></stage><stage stageid="46b0b54c-082d-433d-b0bf-6de2c7d567f9" name="Screenshot Desktop" type="SubSheetInfo"><subsheetid>916cb5c0-e02a-4c9c-a6d6-04b3d46bceb3</subsheetid><narrative>Takes a screenshot of the desktop.</narrative><display x="-195" y="-105" w="150" h="90" /></stage><stage stageid="fe791b78-12e1-434c-b0be-f5ec3b1cdc77" name="Start" type="Start"><subsheetid>916cb5c0-e02a-4c9c-a6d6-04b3d46bceb3</subsheetid><loginhibit /><display x="15" y="-105" /><onsuccess>83ed66e9-c582-42fd-9fe7-4169dc812554</onsuccess></stage><stage stageid="ef0e9dc0-2225-4602-bb9c-7ee8650fe02a" name="End" type="End"><subsheetid>916cb5c0-e02a-4c9c-a6d6-04b3d46bceb3</subsheetid><loginhibit /><display x="15" y="-15" /><outputs><output type="image" name="Image Out" narrative="Image containing the screenshot of the desktop." stage="Image Out" /></outputs></stage><stage stageid="2621e3f5-b95b-4a69-9846-4880efcd73c0" name="Image Out" type="Data"><subsheetid>916cb5c0-e02a-4c9c-a6d6-04b3d46bceb3</subsheetid><display x="90" y="-15" /><datatype>image</datatype><initialvalue /><private /><alwaysinit /></stage><stage stageid="83ed66e9-c582-42fd-9fe7-4169dc812554" name="Screenshot_Desktop" type="Code"><subsheetid>916cb5c0-e02a-4c9c-a6d6-04b3d46bceb3</subsheetid><loginhibit /><display x="15" y="-60" /><outputs><output type="image" name="Image_Out" stage="Image Out" /></outputs><onsuccess>ef0e9dc0-2225-4602-bb9c-7ee8650fe02a</onsuccess><code><![CDATA[Dim ScreenSize As Size = New Size(My.Computer.Screen.Bounds.Width, My.Computer.Screen.Bounds.Height)
+Dim ScreenGrab As New Bitmap(My.Computer.Screen.Bounds.Width, My.Computer.Screen.Bounds.Height)
+Dim g As Graphics = Graphics.FromImage(ScreenGrab)
+g.CopyFromScreen(New Point(0, 0), New Point(0, 0), ScreenSize)
+Image_Out = ScreenGrab]]></code></stage></process></object>
+        <object-group id="73a384f5-0859-4fd2-8fb2-bc7e89098469" name="Nephthis" isDefaultGroup="False" xmlns="http://www.blueprism.co.uk/product/object-group">
+            <members>
+                <object id="800785ea-6dda-4d42-ac7b-6b3bf94257c8" />
+            </members>
+        </object-group>
+    </bpr:contents>
+</bpr:release>
